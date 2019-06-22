@@ -11,6 +11,40 @@ body {
 body {
     background: #ddd;
     padding: 10px;
+    position: relative;
+}
+
+.before-start {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background: rgba(0, 0, 0, .8);
+    width: 100%;
+    height: 100%;
+}
+
+.before-start h2 {
+    color: white;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 400px;
+    font-size: 50px;
+    text-align: center;
+    margin: 0;
+}
+
+.before-start h2 .start {
+    text-decoration: underline;
+    color: #ff00d4;
+    font-size: 65px;
+}
+
+.before-start h2 .keys {
+    color: lime;
+    display: block;
 }
 
 canvas {

@@ -192,11 +192,18 @@ function changeDirection(evt) {
     /*
       4 directional movement.
      */
+    // remove starter block
+    function removeBlock() {
+        var element = document.getElementById('bs');
+        element.parentNode.removeChild(element);
+    }
+
     if (evt.keyCode == 37 && !(xv > 0)) // left arrow
     {
         xv = -speed;
         yv = 0;
         left.play();
+        removeBlock();
     }
 
     if (evt.keyCode == 38 && !(yv > 0)) // top arrow
@@ -204,6 +211,7 @@ function changeDirection(evt) {
         xv = 0;
         yv = -speed;
         up.play();
+        removeBlock();
     }
 
     if (evt.keyCode == 39 && !(xv < 0)) // right arrow
@@ -211,6 +219,7 @@ function changeDirection(evt) {
         xv = speed;
         yv = 0;
         right.play();
+        removeBlock();
     }
 
     if (evt.keyCode == 40 && !(yv < 0)) // down arrow
@@ -218,6 +227,7 @@ function changeDirection(evt) {
         xv = 0;
         yv = speed;
         down.play();
+        removeBlock();
     }
 
     cooldown = true;
